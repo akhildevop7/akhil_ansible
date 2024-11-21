@@ -1,0 +1,21 @@
+---
+# tasks file for my-first-role
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: yes
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: files/index.html
+    dest: /var/www/html
+    owner: root
+    group: root
+    mode: '0644'
+- name: chekcing nginx status
+  shell: service nginx status
+  register: nginx_status
+  ignore_errors: true
+- name: Disply nginx status output 
+  debug:
+    msg: "{{nginx_status.stdout}}"
