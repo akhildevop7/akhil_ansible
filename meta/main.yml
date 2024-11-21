@@ -1,6 +1,6 @@
 galaxy_info:
   author: akhildevop7
-  description: role for installing nginx and copy files
+  description: role for installing nginx and copying static html files
   company: your company (optional)
 
   # If the issue tracker for your role is not on github, uncomment the
